@@ -1,0 +1,1083 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+:root {
+    /* Text editor */
+    --bg-color: #ffffff;
+    --text-color: #37352f;
+    --body-text-color: #37352f;
+    --text-cursor-color: var(--text-color);
+
+    --secondary-text-color: #73726e;
+    --text-accent-color: #e9e9e7;
+    --bg-color-dark: #f7f6f3;
+
+    --text-highlight-color: #4f3b2a;
+    --text-highlight-bg: #feecc8;
+
+    --code-fence-text-color: #37352f;
+    --code-fence-bg-color: #f7f6f3;
+
+    --blockquote-bg-color: #f7f7f7;
+    --blockquote-accent-color: var(--text-color);
+    --blockquote-text-color: var(--text-color);
+
+    --light-trait-100: #38352f;
+    --light-trait-200: #37352f;
+    --light-trait-300: #37352f;
+    --light-trait-400: #37352f;
+
+    --todo-bg-color: #2eaadc;
+    --todo-tick-color: #fff;
+
+    --search-select-bg-color: #edf3ec;
+    --search-select-text-color: #448361;
+
+    --search-hit-text-color: #d44c47;
+    --search-hit-bg-color: #fdebec;
+
+    --url-text-color: black;
+    --url-underline-color: #37352f;
+
+    --footnote-text-color: #f7f6f3;
+    --footnote-bg-color: #888884;
+
+    --table-primary-color: #f7f7f7;
+    --table-secondary-color: #fdfdfd;
+
+    --select-text-bg-color: #c0e5f4;
+
+    --code-color: #9a6e3a;
+    --code-cursor-color: var(--text-color);
+
+    --kbd-text-color: #73726e;
+    --kbd-bg-color: var(--bg-color-dark);
+
+    /* Menu system */
+    --side-bar-bg-color: var(--bg-color-dark);
+    --side-bar-text-color: var(--text-color);
+    --item-hover-bg-color: #e8e7e4;
+    --window-border: 1px solid var(--bg-color);
+
+    --active-file-bg-color: #e9e7e4;
+    --active-file-border-color: var(--active-file-bg-color);
+    --active-file-text-color: var(--text-color);
+
+    --footer-bg-color: var(--side-bar-bg-color);
+
+    --control-text-color: #72706b;
+
+    /* General */
+    --font-size: 16px;
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    --monospace: 'SF Mono Medium', 'Fira Code', 'Cousine', 'Consolas', monospace;
+    --heading-char-color: var(--light-trait-400);
+    --color-popover-bg-color: var(--text-color);
+    --rawblock-edit-panel-bd: var(--bg-color-dark);
+    --meta-content-color: var(--body-text-color);
+    --primary-btn-border-color: var(--body-text-color);
+    --border-radius: 4px;
+
+
+    /* Code variables */
+    --cm-line: #999999;
+    --cm-variable: #37352f;
+    --cm-keyword: #0277aa;
+    --cm-tag: #ff5a5a;
+    --cm-bracket: #ff5a5a;
+    --cm-error: #ff5a5a;
+    --cm-attribute: #0277aa;
+    --cm-def: #dc4a68;
+    --cm-comment: #708090;
+    --cm-string: #669900;
+    --cm-operator: #9a6e3b;
+    --cm-number: #990055;
+    --cm-meta: var(--text-color);
+    --cm-atom: #845dc4;
+    --cm-builtin: #669900;
+    --cm-property: var(--text-color);
+    --cm-variable-2: var(--text-color);
+    --cm-variable-3: #0277aa;
+    --cm-gutter: #f1f3f450;
+}
+
+html {
+    font-size: var(--font-size);
+}
+
+body {
+    font-family: var(--font-family);
+    -webkit-font-smoothing: antialiased;
+    color: var(--body-text-color);
+    line-height: 1.6;
+}
+
+code {
+    background-color: var(--code-fence-bg-color);
+    padding: 2px 2px 2px 2px;
+}
+
+#write {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+    #write {
+        max-width: 1024px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    #write {
+        max-width: 1200px;
+    }
+}
+
+#write>ul:first-child,
+#write>ol:first-child {
+    margin-top: 30px;
+}
+
+a {
+    color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    cursor: text;
+}
+
+cursor {
+    color: var(--text-cursor-color)
+}
+
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+
+h1 tt,
+h1 code,
+h2 tt,
+h2 code,
+h3 tt,
+h3 code,
+h4 tt,
+h4 code,
+h5 tt,
+h5 code,
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+
+h1 {
+    padding-bottom: 0.3em;
+    font-size: 2.2em;
+    line-height: 1.3;
+    color: var(--light-trait-100);
+}
+
+h2 {
+    padding-bottom: 0.3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    color: var(--light-trait-200);
+}
+
+h3 {
+    font-size: 1.4em;
+    line-height: 1.43;
+    color: var(--light-trait-300);
+}
+
+h4 {
+    font-size: 1.2em;
+    color: var(--light-trait-400);
+}
+
+h5 {
+    font-size: 1em;
+    color: var(--light-trait-400);
+}
+
+h6 {
+    font-size: 1em;
+    color: var(--light-trait-400);
+}
+
+p,
+blockquote,
+ul,
+ol,
+dl,
+table {
+    margin: 0.8em 0;
+}
+
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+
+hr {
+    background-color: var(--light-trait-100);
+    height: 1.5px;
+    border: none
+}
+
+a,
+.md-def-url {
+    color: var(--url-text-color);
+    text-decoration: none;
+    border-bottom: 0.05em solid;
+    border-color: var(--url-underline-color);
+    transition: all .1s ease-in;
+}
+
+a:hover {
+    text-decoration: none;
+    opacity: 1;
+}
+
+sup.md-footnote {
+    background-color: var(--footnote-text-color);
+    color: var(--footnote-bg-color);
+}
+
+li p.first {
+    display: inline-block;
+}
+
+ul,
+ol {
+    padding-left: 30px;
+}
+
+ul:first-child,
+ol:first-child {
+    margin-top: 0.35%;
+}
+
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+
+mark,
+.ty-file-search-match-text,
+.md-search-hit {
+    background: var(--search-hit-bg-color);
+    color: var(--search-hit-text-color);
+}
+
+mark {
+    border-radius: 4px;
+    color: var(--text-highlight-color);
+    font-weight: inherit;
+    background-color: var(--text-highlight-bg);
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.md-search-hit * {
+    background: var(--search-select-bg-color);
+    color: var(--search-select-text-color);
+}
+
+/* Search highlight */
+.cm-search-hit.CodeMirror-selectedtext,
+.md-search-hit.md-search-select,
+.md-search-select {
+    outline: 0px solid var(--search-select-text-color);
+}
+
+.outline-item.select,
+.ty-search-item-line.select,
+.ty-search-item.select {
+    outline-width: 2px;
+}
+
+.outline-item.select {
+    outline-offset: 0px;
+}
+
+blockquote {
+    color: var(--blockquote-text-color);
+    margin-left: 1.75px;
+    margin-right: 0px;
+    border-left: 4px solid var(--blockquote-accent-color);
+    padding: 10px 14px 7px 22px;
+    /* change the quote highlight */
+    background-color: var(--blockquote-bg-color);
+}
+
+blockquote blockquote {
+    padding-right: 0;
+}
+
+/* Alternating color rows in table*/
+table tr:nth-child(2n) {
+    background-color: var(--table-primary-color);
+}
+
+table tr:nth-child(2n + 1) {
+    background-color: var(--table-secondary-color);
+}
+
+/* Alternating color rows in table*/
+
+table {
+    padding: 0;
+    word-break: initial;
+}
+
+table tr {
+    border-top: 1px solid var(--text-accent-color);
+    margin: 0;
+    padding: 0;
+}
+
+table tr th {
+    font-weight: bold;
+    border: 1px solid var(--text-accent-color);
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table tr td {
+    border: 1px solid var(--text-accent-color);
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+kbd {
+    font-size: 0.875rem;
+    background: var(--kbd-bg-color);
+    border: 1px solid var(--text-accent-color);
+    box-shadow: 0 2px 0 var(--text-accent-color);
+    color: var(--kbd-text-color);
+}
+
+.md-fences,
+code,
+tt {
+    border: none;
+    color: var(--code-fence-text-color);
+    background-color: var(--code-fence-bg-color);
+    border-radius: var(--border-radius);
+    padding: 2px 4px 0px 4px;
+    font-size: 0.975em;
+    font-weight: medium;
+    font-family: var(--monospace)
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: var(--bg-color-dark);
+    border: 0;
+    border-radius: var(--border-radius);
+    color: var(--secondary-text-color);
+    margin-top: 0 !important;
+}
+
+#write .mathjax-block .md-rawblock-tooltip {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+
+#write .mathjax-block .md-math-container {
+    border-top-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+}
+
+#write .md-mathblock-panel .md-rawblock-control:first-of-type {
+    border-top-left-radius: var(--border-radius);
+}
+
+.md-mathjax-midline {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.md-inline-math script {
+    color: var(--code-color);
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: none;
+    border-radius: var(--border-radius);
+}
+
+#write .code-tooltip {
+    bottom: initial;
+    top: 100%;
+    left: initial;
+    right: -1px;
+    background: var(--bg-color-dark);
+    border: 1px solid var(--text-accent-color);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: 0;
+    font-family: var(--monospace);
+}
+
+#write .md-mathblock-panel .code-tooltip {
+    right: 0;
+    border: none;
+}
+
+/* TODO */
+#write .md-task-list-item>input {
+    -webkit-appearance: initial;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    border: 1px solid var(--text-color);
+    margin-top: 0.3rem;
+    margin-left: -1.45rem;
+    height: 0.95rem;
+    width: 0.95rem;
+    transition: all 0.35s;
+}
+
+#write .md-task-list-item>input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#write .md-task-list-item>input[checked] {
+    background: var(--todo-bg-color);
+    border: 1px solid var(--todo-bg-color);
+    text-decoration: line-through;
+}
+
+#write .md-task-list-item>input[checked]::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: '✓';
+    position: absolute;
+    margin-top: 0.05rem;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    color: var(--todo-tick-color);
+    font-size: 0.75em;
+    font-weight: 600;
+}
+
+#write .md-task-list-item>input[checked]::after {
+    text-decoration: line-through;
+}
+
+/* TODO */
+.md-image>.md-meta {
+    border-radius: var(--border-radius);
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-toc {
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Source mode */
+.CodeMirror.cm-s-typora-default *,
+.cm-s-typora-default * {
+    background: inherit;
+    color: var(--body-text-color);
+    font-family: var(--monospace);
+    font-size: var(--font-size) !important;
+    font-style: normal;
+    font-weight: medium;
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+    border-left: 2.75px solid var(--code-cursor-color);
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 2.75px solid var(--code-cursor-color);
+}
+
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+.outline-expander {
+    width: 1.5rem;
+    vertical-align: initial;
+}
+
+.outline-expander:before,
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before,
+.outline-item-open>.outline-item>.outline-expander:hover:before {
+    content: "\f125";
+    transition: transform 125ms ease-in-out;
+}
+
+.outline-item-open>.outline-item>.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+    transform: rotate(90deg);
+}
+
+.outline-label:hover {
+    text-decoration: none;
+}
+
+#toc-dropmenu {
+    background: var(--bg-color-dark);
+}
+
+#toc-dropmenu .outline-title {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.dropdown-menu .divider {
+    display: none;
+}
+
+.context-menu {
+    border: none !important;
+    backdrop-filter: saturate(180%) blur(20px) brightness(1.1);
+    background-color: var(--bg-color-dark);
+    box-shadow: 0 25.6px 57.6px 0 rgba(0, 0, 0, .22), 0 4.8px 14.4px 0 rgba(0, 0, 0, .18) !important;
+}
+
+.file-node-background {
+    height: 31px;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state {
+    visibility: visible;
+}
+
+.file-node-icon {
+    margin-right: 8px;
+}
+
+.file-library-node:not(.file-node-root):focus>.file-node-content {
+    outline: none;
+}
+
+/* New file animation */
+.blink-area {
+    animation: none;
+}
+
+.file-list-item-summary {
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+}
+
+#md-searchpanel input {
+    border-radius: var(--border-radius);
+    box-shadow: none;
+}
+
+#md-searchpanel input:focus {
+    box-shadow: none;
+    border-color: var(--meta-content-color);
+}
+
+#md-searchpanel .search-type-selection {
+    width: auto;
+}
+
+#md-searchpanel .btn:not(.close-btn):hover {
+    box-shadow: none;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    color: var(--sidebar-text-color);
+    background-color: var(--side-bar-bg-color);
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+/* CODE HIGHLIGHT */
+pre.CodeMirror-line {
+    color: var(--cm-line) !important
+}
+
+.cm-variable {
+    color: var(--cm-variable) !important
+}
+
+.cm-keyword {
+    color: var(--cm-keyword) !important
+}
+
+.cm-tag {
+    color: var(--cm-tag) !important
+}
+
+.cm-variable-3 {
+    color: var(--cm-variable-3) !important
+}
+
+.cm-bracket {
+    color: var(--cm-bracket);
+}
+
+.cm-error {
+    color: var(--cm-error) !important;
+}
+
+.cm-attribute {
+    color: var(--cm-attribute) !important
+}
+
+.cm-def {
+    color: var(--cm-def) !important
+}
+
+.cm-comment {
+    color: var(--cm-comment) !important
+}
+
+.cm-string {
+    color: var(--cm-string) !important;
+    font-variant-ligatures: common-ligatures !important;
+}
+
+.cm-tag:not() {
+    font-weight: 700;
+}
+
+.cm-operator {
+    color: var(--cm-operator) !important
+}
+
+.cm-number {
+    color: var(--cm-number) !important
+}
+
+.cm-meta {
+    color: var(--cm-meta) !important;
+    font-weight: 700 !important;
+}
+
+.cm-atom {
+    color: var(--cm-atom) !important
+}
+
+.cm-builtin {
+    color: var(--cm-builtin) !important
+}
+
+.cm-property {
+    color: var(--cm-property) !important
+}
+
+.cm-variable-2 {
+    color: var(--cm-variable-2) !important
+}
+
+
+/* CODE HIGHLIGHT */
+
+.file-tree-node.active>.file-node-background {
+    color: var(--active-file-text-color);
+    background-color: var(--active-file-bg-color);
+    border-left: 0px solid var(--active-file-border-color) !important;
+    border-color: var(--active-file-border-color) !important;
+}
+
+.CodeMirror-gutters {
+    border-right: 1px solid var(--cm-gutter);
+    background: inherit;
+    white-space: nowrap;
+}
+
+.ty-footer,
+.sidebar-footer,
+footer {
+    backdrop-filter: saturate(120%) blur(20px) brightness(0.85);
+    border: none !important;
+    background: none;
+    background-color: var(--footer-bg-color);
+}
+
+.code-tooltip {
+    border-radius: 4px;
+    background-color: var(--dark-trait);
+    box-shadow: 0 25.6px 57.6px 0 rgba(0, 0, 0, .52), 0 4.8px 14.4px 0 rgba(0, 0, 0, .28) !important;
+}
+
+#sidebar-files-menu {
+    color: var(--side-bar-text-color);
+    border-radius: 4px;
+    border: none !important;
+    box-shadow: 0 25.6px 57.6px 0 #f7f6f3, 0 4.8px 14.4px 0 rgba(0, 0, 0, .28);
+}
+
+.code-tooltip.md-tooltip-hide.md-hover-tip {
+    box-shadow: 0 25.6px 57.6px 0 rgba(0, 0, 0, .52), 0 4.8px 14.4px 0 rgba(0, 0, 0, .28);
+}
+
+#typora-sidebar {
+    border: none !important;
+}
+
+#footer-word-count-info,
+#spell-check-panel {
+    border: none !important;
+    backdrop-filter: saturate(120%) blur(20px) brightness(0.85) !important;
+    box-shadow: 0 25.6px 57.6px 0 rgba(0, 0, 0, .32), 0 4.8px 14.4px 0 rgba(0, 0, 0, .28) !important;
+}
+
+/* Windows/Linux unibody mode */
+.megamenu-content,
+.megamenu-opened header {
+    color: var(--body-text-color);
+    background: var(--bg-color-dark);
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px var(--light-trait-300) solid;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: var(--text-color);
+    background: var(--bg-color-dark);
+}
+
+.megamenu-menu-panel table td:nth-child(2) {
+    color: var(--text-color);
+    background: var(--bg-color-dark);
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: var(--text-color);
+    background: var(--active-file-bg-color);
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: var(--text-color);
+    background: var(--active-file-bg-color);
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 1px var(--text-color-secondary) solid;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+}
+
+.megamenu-menu,
+.megamenu-content {
+    background: var(--side-bar-bg-color);
+    color: var(--text-color);
+}
+
+#top-titlebar,
+#top-titlebar * {
+    background: inherit;
+    color: var(--text-color);
+}
+
+.megamenu-menu-header #megamenu-menu-header-title:before {
+    color: var(--text-color);
+}
+
+megamenu-back-btn {
+    color: var(--text-color);
+    border-color: var(--text-color);
+}
+
+.megamenu-menu-header #megamenu-menu-header-title,
+.megamenu-menu-header:hover,
+.megamenu-menu-header:focus {
+    color: inherit;
+}
+
+.megamenu-menu-panel table tr:nth-child(2n + 1) {
+    background-color: var(--side-bar-bg-color);
+}
+
+
+</style><title>马来西亚留学入境指南</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=' first-line-indent'><h1 id='马来西亚留学入境指南'><span>马来西亚留学入境指南</span></h1><h2 id='前言'><span>前言</span></h2><p><span>欢迎来到马来西亚！Welcome to Malaysia!  </span></p><p><span>本指南旨在帮助你顺利入境马来西亚，并为你在这个美丽的国家开始新的生活做好充分准备。我们将为你提供有关签证、入境流程、行李准备、住宿选择等方面的实用信息。同时，我们还会分享一些有关马来西亚文化、生活方式和学习环境的建议，帮助你更快地适应这里的生活。</span></p><p><span>无论你是第一次来到马来西亚，还是对这里已经有所了解，我们都希望这份指南能为你提供帮助。祝你在马来西亚的留学生活一切顺利，收获满满！</span></p><h2 id='目录'><span>目录</span></h2><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#马来西亚留学入境指南">马来西亚留学入境指南</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n2"><a class="md-toc-inner" href="#前言">前言</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n6"><a class="md-toc-inner" href="#目录">目录</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n8"><a class="md-toc-inner" href="#行前准备">行前准备</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n9"><a class="md-toc-inner" href="#入境所需文件">入境所需文件</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n60"><a class="md-toc-inner" href="#行李准备">行李准备</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n61"><a class="md-toc-inner" href="#必备物品">必备物品</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n62"><a class="md-toc-inner" href="#证件文件">证件文件</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n64"><a class="md-toc-inner" href="#资金财务">资金财务</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n65"><a class="md-toc-inner" href="#移动支付">移动支付</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n67"><a class="md-toc-inner" href="#现金">现金</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n74"><a class="md-toc-inner" href="#银行卡">银行卡</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n76"><a class="md-toc-inner" href="#电子设备">电子设备</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n87"><a class="md-toc-inner" href="#衣物选择">衣物选择</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n88"><a class="md-toc-inner" href="#日常衣物">日常衣物</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n95"><a class="md-toc-inner" href="#正装">正装</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n97"><a class="md-toc-inner" href="#泳衣和运动装备">泳衣和运动装备</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n99"><a class="md-toc-inner" href="#防晒衣物">防晒衣物</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n101"><a class="md-toc-inner" href="#药品携带">药品携带</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n102"><a class="md-toc-inner" href="#常用药品">常用药品</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n104"><a class="md-toc-inner" href="#特殊药品">特殊药品</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n106"><a class="md-toc-inner" href="#注意事项">注意事项</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n108"><a class="md-toc-inner" href="#附录马来西亚海关禁止携带药物清单">附录：马来西亚海关禁止携带药物清单</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n121"><a class="md-toc-inner" href="#机票预订与航班信息">机票预订与航班信息</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n143"><a class="md-toc-inner" href="#货币兑换">货币兑换</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n145"><a class="md-toc-inner" href="#中国境内换汇">中国境内换汇</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n146"><a class="md-toc-inner" href="#银行选择">银行选择</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n148"><a class="md-toc-inner" href="#所需材料">所需材料</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n150"><a class="md-toc-inner" href="#换汇额度">换汇额度</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n152"><a class="md-toc-inner" href="#马来西亚当地换汇">马来西亚当地换汇</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n153"><a class="md-toc-inner" href="#银行选择-2">银行选择</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n155"><a class="md-toc-inner" href="#取现限额">取现限额</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n157"><a class="md-toc-inner" href="#货币兑换点兑换">货币兑换点兑换</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n211"><a class="md-toc-inner" href="#其他换汇方式">其他换汇方式</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n217"><a class="md-toc-inner" href="#注私下换汇属于违法行为">注：私下换汇属于违法行为</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n228"><a class="md-toc-inner" href="#私下换汇洗钱的案例">私下换汇洗钱的案例：</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n261"><a class="md-toc-inner" href="#银行开户">银行开户</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n263"><a class="md-toc-inner" href="#选择银行">选择银行</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n264"><a class="md-toc-inner" href="#推荐">推荐</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n270"><a class="md-toc-inner" href="#其他">其他</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n280"><a class="md-toc-inner" href="#准备材料">准备材料</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n281"><a class="md-toc-inner" href="#主要材料">主要材料</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n311"><a class="md-toc-inner" href="#中国银行马来西亚">中国银行（马来西亚）</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n376"><a class="md-toc-inner" href="#保险购买">保险购买</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n378"><a class="md-toc-inner" href="#入境与抵达">入境与抵达</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n386"><a class="md-toc-inner" href="#安顿与适应">安顿与适应</a></span></p></div><h2 id='行前准备'><span>行前准备</span></h2><h3 id='入境所需文件'><span>入境所需文件</span></h3><p><span>下面是入境马来西亚必要的材料与证件，</span><strong><span>非常重要，请反复核查</span></strong><span>：</span></p><figure class='table-figure'><table><thead><tr><th><span>入境材料</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>护照</span></td><td><span>有效期必须≥6个月</span></td></tr><tr><td><span>两寸护照照片</span></td><td><span>3-6张</span></td></tr><tr><td><span>eVAL</span></td><td><span>在EMGS里下载，共5页，前3页</span><strong><span>每一页单独彩打</span></strong></td></tr><tr><td><span>EMGS Approval Letter</span></td><td><span>彩色打印</span></td></tr><tr><td><span>eVISA</span></td><td><span>彩色打印</span></td></tr><tr><td><span>Offer</span></td><td><span>彩色打印</span></td></tr><tr><td><span>MDAC</span></td><td><span>打印</span></td></tr><tr><td><span>机票行程单</span></td><td><span>中英文双语打印</span></td></tr><tr><td><span>疫苗接种单</span></td><td><span>中英文双语打印，以</span><strong><span>山东省</span></strong><span>为例，可以在</span><strong><span>爱山东</span></strong><span>里面进行开具</span></td></tr></tbody></table></figure><p><span>此外，还需要携带以下文件，便于</span><strong><span>学籍注册</span></strong><span>：</span></p><figure class='table-figure'><table><thead><tr><th><span>学籍材料</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>毕业证</span></td><td><span>原件+复印件</span></td></tr><tr><td><span>学位证</span></td><td><span>原件+复印件（适用于攻读硕博）</span></td></tr><tr><td><span>公证件</span></td><td><span>中英文双语原件</span></td></tr><tr><td><span>成绩单</span></td><td><span>原件+复印件</span></td></tr></tbody></table></figure><p><span>建议上述文件全部</span><strong><span>一式三份</span></strong><span>，自己持有两份（分开放），另一份请交给自己的</span><strong><span>紧急联系人（监护人）</span></strong><span>。此外，上述文件必须保留</span><strong><span>PDF版本</span></strong><span>，以备不时之需。</span></p><h2 id='行李准备'><span>行李准备</span></h2><h3 id='必备物品'><span>必备物品</span></h3><h4 id='证件文件'><span>证件文件</span></h4><p><span>见</span><a href='#入境所需文件'><strong><span>入境所需文件</span></strong></a></p><h4 id='资金财务'><span>资金财务</span></h4><h5 id='移动支付'><span>移动支付</span></h5><p><span>马来西亚的移动支付软件为</span><strong><span>Touch n Go（技术来源于支付宝）</span></strong><span>，在向商家支付时，如果商家拥有</span><strong><span>Duitnow商家码</span></strong><span>，即可以使用</span><strong><span>支付宝</span></strong><span>直接扫码支付。请注意，支付宝不支持扫描</span><strong><span>个人Duitnow二维码</span></strong><span>。</span></p><h5 id='现金'><span>现金</span></h5><p><span>建议携带适量现金，留学生可携带现金的限额是</span><strong><span>人民币 2 万、美元 5000</span></strong><span>，但也不必带过多，可携带部分马币和少量人民币应急，学费等大额费用可通过</span><strong><span>汇款</span></strong><span>等方式提前存入学校账户或银行卡。</span></p><ul><li><p><span>请注意，并不推荐在</span><strong><span>机场换汇</span></strong><span>，以白云机场T2为例，换汇点没有</span><strong><span>外币→外币直接汇率</span></strong><span>（以下外币指</span><strong><span>除人民币以外的货币</span></strong><span>），这意味着如果你想要用</span><strong><span>美元→马币</span></strong><span>，就必须</span><strong><span>美元→人民币→马币</span></strong><span>，实际上会因此损失一部分钱。并且机场的汇率并不友好，每笔无论金额都会收取50RMB手续费。</span></p></li><li><p><span>建议到机场之后，使用</span><strong><span>银联储蓄卡</span></strong><span>在</span><strong><span>带有银联标志的 ATM 机</span></strong><span>直接取现。取现时牢记要检查</span><strong><span>银行卡ATM机取现日限额</span></strong><span>（开足够用的金额即可），</span><strong><span>是否有额外装置</span></strong><span>，防止盗刷。</span></p></li></ul><h5 id='银行卡'><span>银行卡</span></h5><p><span>必须准备≥1张</span><strong><span>银联卡，VISA卡（或Mastercard）</span></strong><span>，务必</span><strong><span>设置卡限额</span></strong><span>，在当地</span><strong><span>带有银联标志的 ATM 机</span></strong><span>上取款手续费相对划算；也可以咨询中国银行，中国工商银行等办理专门针对留学生的信用卡，方便日后使用。</span></p><h5 id='电子设备'><span>电子设备</span></h5><p><strong><span>电脑：</span></strong><span>从国内带一台笔记本电脑过去，这里推荐携带</span><strong><span>两台电脑</span></strong><span>，以备不时之需。</span></p><p><strong><span>手机及充电器、耳机：</span></strong><span>手机是日常通讯和学习生活的必备工具，记得携带配套的充电器和耳机。</span></p><ul><li><p><span>国行手机只推荐</span><strong><span>三星和苹果</span></strong><span>，一定不要使用</span><strong><span>国行华为手机</span></strong><span>。鸿蒙系统在国外几乎无法正常使用，无法安装重要软件。</span></p></li><li><p><span>不建议使用</span><strong><span>国行安卓（除三星以外所有品牌，下同）</span></strong><span>，这是由于国行安卓只具备</span><strong><span>谷歌基础框架</span></strong><span>，缺少</span><strong><span>谷歌FCM推送</span></strong><span>，这意味着例如</span><strong><span>WhatsApp, Telegram, Instagram, Gmail, Outlook</span></strong><span>等学习与生活必备软件无法在</span><strong><span>无常驻和锁定后台，电池使用无限制</span></strong><span>前提下进行消息推送。</span><strong><span>就算开启，消息推送也并不及时</span></strong><span>，很有可能</span><strong><span>存在消息漏接受，电话漏接</span></strong><span>的情况。且系统多为自家进行深度改造后的安卓系统，在很多使用场景下受限。</span></p></li></ul><p><strong><span>iPad 或其他电子阅读器（非必要，不建议购买和携带）：</span></strong><span>如果有阅读电子书的习惯，可以携带一个方便学习和娱乐。</span></p><p><strong><span>U 盘：</span></strong><span>至少带一个 16G 或 32G 的 U 盘，用于存储和传输学习资料、课堂展示等文件。</span></p><p><strong><span>转换插头和插线板：</span></strong><span>马来西亚多使用</span><strong><span>英式三孔插头</span></strong><span>，与国内不同，所以需要带一个转换插头或万能转换插头，同时带一个插线板方便同时连接多个电器设备。马来西亚插线板价格高昂，建议从国内网购</span><strong><span>英标转国标插线板</span></strong><span>，带到马来西亚。</span></p><h3 id='衣物选择'><span>衣物选择</span></h3><h4 id='日常衣物'><span>日常衣物</span></h4><p><span>马来西亚常年炎热，温度在 25℃ - 34℃左右，以夏季衣物为主，如</span><strong><span>纯棉 T 恤、短裤、短裙、连衣裙</span></strong><span>等，可以多带几件轻薄透气的衣物。但部分室内场所如教室、图书馆等空调温度较低，</span><strong><span>室内外温差大</span></strong><span>，建议带几件长袖衬衫或薄外套备用。</span></p><p><span>如果想要参观</span><strong><span>清真寺（例如布城粉红清真寺）等伊斯兰场所</span></strong><span>，可能会要求穿着特定伊斯兰服饰。</span></p><p><strong><span>马来西亚公立大学（UM, UKM, USM, UPM, UTM等）同学请注意：</span></strong></p><p><span>马来西亚公立大学为</span><strong><span>马来人掌管行政</span></strong><span>。马来人信奉伊斯兰教，对于穿衣有比较严格的要求。请尽量不要穿着</span><strong><span>短裤</span></strong><span>，尽量穿着长裤；女生尽量不要穿着</span><strong><span>吊带</span></strong><span>，但并不需要裹头巾或穿着伊斯兰服饰。学校内有专门管理穿着相关事务的部门，不要被他们警告和处罚。</span></p><p><strong><span>私立大学（Taylor, Sunway, UCSI等）和海外分校（Monash, Nottingham等）</span></strong><span>对穿着方面要求较少，日常基本穿着即可。</span></p><p><span>详细请参见各学校有关主管部门的文件。</span></p><h4 id='正装'><span>正装</span></h4><p><span>学校的一些重要场合、仪式、演讲、招聘会等可能需要穿正装，男生可以准备一套</span><strong><span>西装</span></strong><span>，女生准备一套正式的</span><strong><span>套装或连衣裙</span></strong><span>。</span></p><h4 id='泳衣和运动装备'><span>泳衣和运动装备</span></h4><p><span>马来西亚小区基本都有泳池，且海边游玩的机会较多，所以泳衣是必备的；如果有运动习惯，可以带上适合的运动服装和运动鞋。</span></p><h4 id='防晒衣物'><span>防晒衣物</span></h4><p><span>由于当地日照充足，紫外线强，防晒衣、遮阳帽、太阳镜等防晒用品也是很有必要的，可以有效阻挡紫外线。</span></p><h3 id='药品携带'><span>药品携带</span></h3><h4 id='常用药品'><span>常用药品</span></h4><p><span>可以携带一些常见疾病的治疗药物，如</span><strong><span>感冒药、退烧药、消炎药、止泻药、抗过敏药、止痒药</span></strong><span>等，以应对日常的身体不适。另外，</span><strong><span>医用棉签、创可贴</span></strong><span>等用于处理伤口的物品也可以准备一些。</span></p><h4 id='特殊药品'><span>特殊药品</span></h4><p><span>如果有慢性疾病需要长期服药，一定要提前向海关申报所携带的药品，并将药品保存在原包装内，同时携带病例和医生处方（英文翻译），证明必须服用该药品且服用量在医生监督内。</span></p><h4 id='注意事项'><span>注意事项</span></h4><p><span>避免携带</span><strong><span>含吗啡类、含麻黄碱类、含士的宁类、含多潘立酮类</span></strong><span>以及含动物成分的药品等违禁药物。</span></p><h4 id='附录马来西亚海关禁止携带药物清单'><span>附录：马来西亚海关禁止携带药物清单</span></h4><ol start='' ><li><p><strong><span>含吗啡类药品</span></strong><span>：肠胃宁、咳喘宁、咳速停、小儿止泻灵等都属于吗啡类药物。因为吗啡类药物可能成瘾，所以被列为违禁药品。另外，复方甘草片里含有阿片粉（主要成分是吗啡），也属于此类，严禁非法持有、运输、销售。</span></p></li><li><p><strong><span>含麻黄碱类药品</span></strong><span>：麻黄碱是制作冰毒的重要原料，因此受到严格管控。常见的含麻黄碱类药品有柴连口服液、鼻炎片、大活络丸、复方川贝止咳糖浆、急支糖浆、追风膏等，感冒药中的白加黑、康泰克、泰诺等也含有该成分。若要携带，建议带少量未拆封的药物。</span></p></li><li><p><strong><span>含士的宁类药物</span></strong><span>：士的宁是由中药马钱子中提取的一种生物碱，对大脑皮质及听、视、延髓呼吸中枢有一定兴奋作用，常见于缓解疼痛类药物，比如跌打万花油、风湿关节炎片、骨刺胶囊、关节炎膏等。</span></p></li><li><p><strong><span>含多潘立酮类药物</span></strong><span>：吗丁啉是典型的含有多潘立酮类药物，长期服用可能引起心律失常、心脏骤停等情况，也在限制之列。</span></p></li><li><p><strong><span>含动物成分的中药</span></strong><span>：虎骨酒、熊胆粉、燕窝、鹿茸、蛇胆、牛黄解毒丸等都属于违禁品。</span></p><p>&nbsp;</p></li></ol><h2 id='机票预订与航班信息'><span>机票预订与航班信息</span></h2><p><span>机票购买可以选择</span><strong><span>留学生机票</span></strong><span>，以</span><strong><span>中国南方航空</span></strong><span>为例，下表是留学生机票和普通机票的比较：</span></p><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th><span>留学生机票</span></th><th><span>普通机票</span></th></tr></thead><tbody><tr><td><span>价格</span></td><td><span>官网价格（可能会有优惠）</span></td><td><span>官网价格</span></td></tr><tr><td><span>优惠</span></td><td><strong><span>额外1个行李额</span></strong><span>，免费改期一次，最高5%直减票价</span></td><td><span>无</span></td></tr></tbody></table></figure><p><span>类似的优惠很多航空公司都有，例如</span><strong><span>中国东方航空</span></strong><span>，以官网信息为准</span></p><p><span>注意事项：</span></p><ul><li><p><span>选择</span><strong><span>行李直挂</span></strong><span>航班（中转航班可不用在中转地重新办理托运）</span></p></li><li><p><span>尽量选择</span><strong><span>大航司</span></strong><span>，服务与体验更优；不选择</span><strong><span>廉价航空公司</span></strong></p></li></ul><h2 id='货币兑换'><span>货币兑换</span></h2><p><span>前往马来西亚留学换汇主要有以下方面需要了解</span></p><h3 id='中国境内换汇'><span>中国境内换汇</span></h3><h4 id='银行选择'><span>银行选择</span></h4><p><span>目前在中国境内，只有</span><strong><span>中国银行</span></strong><span>的</span><strong><span>部分地区</span></strong><span>支持</span><strong><span>马来西亚林吉特</span></strong><span>货币的兑换，国内大部分城市无法直接兑换</span><strong><span>马来西亚林吉特</span></strong><span>。建议提前向所要去的银行电话咨询，具体能否兑换以及相关的汇率、手续费等信息以银行网点答复为准。</span></p><h4 id='所需材料'><span>所需材料</span></h4><p><span>换汇时通常需要携带</span><strong><span>本人的有效护照、签证、身份证或户口簿、入学通知复印件（有的银行可能要求提供）</span></strong><span>等文件。</span></p><h4 id='换汇额度'><span>换汇额度</span></h4><p><span>中国按照身份证对</span><strong><span>个人购结汇实行年度总额管理</span></strong><span>，年度总额为</span><strong><span>每人每年等值 5 万美元</span></strong><span>。如果外国的学校收费通知单上的额度在 2 万美元以下，留学生在国内银行购汇时，银行可进行独立核批然后办理换汇手续；但如果额度高于 2 万美元，则需要到当地的外管局进行审批，获得批准后，拿着外管局开立的购汇证明才可以到银行进行购汇。</span></p><h3 id='马来西亚当地换汇'><span>马来西亚当地换汇</span></h3><h4 id='银行选择-2'><span>银行选择</span></h4><p><span>马来西亚有四大银行的 ATM 支持银联取款，分别是丰隆银行（Hong Leong Bank）、大众银行（Public Bank）、RHB Bank、马来亚银行（Maybank）。其中 Maybank 的 ATM 机器在市区分布较多，使用较为方便。不过，建议提前了解自己所持银行卡在境外取款的手续费标准，因为手续费分为两部分，一部分是 ATM 机所属银行收费，Maybank 在这部分目前不收费，但中国发卡的银行会收取手续费，例如招商银行、农业银行、建设银行等，一般按取现金额的特定比例或者 10-15 元每笔进行收费。</span></p><h4 id='取现限额'><span>取现限额</span></h4><p><span>ATM 机取现一般有金额上限，例如每次上限可能为 1500 马币，每天上限可能为 10000 人民币（具体可咨询发卡行客服）。</span></p><h4 id='货币兑换点兑换'><span>货币兑换点兑换</span></h4><ul><li><p><strong><span>分布位置</span></strong><span>：马来西亚的各大商场基本都设有货币兑换点（Money Changer），比较方便找到。以</span><strong><span>双威金字塔（Sunway Pyramid）</span></strong><span>为例，商场内共有两个换汇点，需要注意的是，从BRT Sunway Lagoon走连廊抵达Sunway Pyramid第一个换汇点，不同金额所进行兑换的汇率并不相同，换汇前请</span><strong><span>询问清楚当日汇率，货比三家</span></strong><span>。 </span></p></li><li><p><strong><span>汇率差异</span></strong><span>：不同兑换点的汇率会有所不同，且汇率一直在实时变动。建议多找几家进行比价，选择汇率较好的兑换点进行兑换。一般来说，汇率从好到差的大致顺序为小印度、茨厂街、市区商业办公区、KL Sentral（中央车站）一楼、KL Sentral 二楼、机场（机场的汇率最不划算，不到万不得已不建议在机场兑换）。</span></p></li><li><p><strong><span>佐证文件（小额换汇一般只需要护照）</span></strong></p><ul><li><p><strong><span>一、身份证明类</span></strong></p><ol start='' ><li><p><strong><span>护照（必须携带，否则无法换汇）</span></strong></p><ul><li><p><span>有效期内</span></p></li><li><p><span>整洁无破损</span></p></li></ul></li><li><p><span>签证</span></p><ul><li><p><span>学生签证（留学生）</span></p></li><li><p><span>旅游签证等其他类型签证</span></p></li></ul></li></ol></li><li><p><strong><span>二、留学相关类（针对留学生）</span></strong></p><ol start='' ><li><p><span>入学通知书</span></p><ul><li><p><span>包含学校、专业、入学时间等信息</span></p></li></ul></li><li><p><span>学费缴纳凭证</span></p></li></ol></li><li><p><strong><span>三、行程相关类（针对旅游）</span></strong></p><ol start='' ><li><p><span>机票行程单</span></p><ul><li><p><span>含航班、出发地与目的地、时间等详细内容</span></p></li></ul></li><li><p><span>酒店预订凭证</span></p></li></ol></li><li><p><strong><span>四、其他辅助类</span></strong></p><ol start='' ><li><p><span>银行卡或信用卡（可能需要）</span></p></li></ol><p><span>需注意，不同货币兑换点要求可能有所不同，兑换前可向工作人员咨询确认。</span></p></li></ul></li><li><p><strong><span>民间兑换点</span></strong><span>：在马来西亚，除了银行和正规的货币兑换商，也存在一些民间兑换点。但在选择民间兑换点时要格外谨慎，注意辨别其合法性和信誉度，以免上当受骗。</span></p></li></ul><h3 id='其他换汇方式'><span>其他换汇方式</span></h3><ul><li><p><strong><span>支付宝</span></strong><span>：在马来西亚，有许多地方接受使用支付宝支付。通过支付宝进行国际支付采用即时到账形式，买家使用人民币支付后，支付宝代为购换相应外币直接支付给商家，汇率相对较为划算。</span></p></li><li><p><strong><span>国际信用卡</span></strong><span>：在马来西亚的很多地方都支持刷卡消费，信用卡一般推荐使用 Visa 和 Master，这两种信用卡最为通用。不过，国内发行的这类信用卡大都是美元卡，在进行马币消费时会转换两次，会收取一定的手续费，一般为 1.5% 左右。也有全币种的信用卡，如中国银行全币种卡等，不需要收取货币转换费。</span></p></li></ul><h3 id='注私下换汇属于违法行为'><span>注：私下换汇属于违法行为</span></h3><p><span>私下换汇属违法行为，不仅</span><strong><span>风险大、易受骗</span></strong><span>，还可能成为</span><strong><span>不法分子的洗钱工具</span></strong><span>。如需换汇，请到</span><strong><span>正规银行或货币兑换点</span></strong><span>进行兑换。</span><strong><span>切勿贪图一时方便或蝇头小利</span></strong><span>，在网上或线下与他人换汇，更不要听信陌生人口中所谓可获取“手续费”“中介费”而协助他人私下换汇。</span></p><blockquote><center style>驻马来西亚使馆提醒中国公民谨防诈骗</center><center style>2023-05-30 16:39</center><p><span>近期，驻马来西亚使馆接到多名中国公民致电称，因留学、租房遭遇黑中介、私下换汇等行为造成经济损失并受到不法分子威胁，个别不法分子假冒使馆工作人员企图诈骗等。在此特提醒包括广大留学生在内的中国公民注意：</span></p><p><span>一、谨慎选择留学、租房等中介机构。建议在学校官方网站和公寓官方网站查询留学、租房等信息，切勿轻信中介机构宣称的所谓“免预约”“免材料”“低价”等虚假信息。为避免中介机构因不规范经营等原因拖欠房东租金，甚至携款潜逃，导致经济受损，请勿一次性支付大额佣金，涉及大额转账应保留汇款凭证。</span></p><p><span>二、私下换汇属违法行为，不仅风险大、易受骗，还可能成为不法分子的洗钱工具。如需换汇，请到正规银行或货币兑换点进行兑换。切勿贪图一时方便或蝇头小利，在网上或线下与他人换汇，更不要听信陌生人口中所谓可获取“手续费”“中介费”而协助他人私下换汇。</span></p><p><span>三、在外学习、生活请务必提高警惕，合法维护自身权益，遇到问题及时向亲友、老师或学校报告，必要时拨打当地报警电话。</span></p><p><span>四、切实提高反诈防骗意识。个别不法分子假冒使馆工作人员，以办理文书、收取包裹、当事人涉嫌刑事案件等为由，要求当事人到指定地点见面，或提供银行账户及个人信息等。请不点击未知链接，不轻信陌生来电，不随意透露个人信息，遇事保持冷静多核实。如接到疑似诈骗电话，请立即挂断并勿回拨。如您正在使馆办理相关业务或无法辨别是否为诈骗电话，请及时向使馆或外交部全球领事保护与服务应急热线核实。如不慎受骗，请及时向当地警方或国内公安机关报案。</span></p><p><span>（中华人民共和国驻马来西亚大使馆）</span></p></blockquote><h4 id='私下换汇洗钱的案例'><span>私下换汇洗钱的案例：</span></h4><ol start='' ><li><p><span>英国伦敦华人洗钱团伙案</span></p><ul><li><p><strong><span>案件详情</span></strong><span>：一个由 7 名华人组成的团伙，以中国留学生为目标，在 2020 年 2 月至 2023 年 6 月期间，通过中国 “地下钱庄” 进行洗钱活动。他们利用即时通讯 app 向大学生出售英镑，绕过中国外汇管制。警方在调查过程中，发现多处藏有大量现金、点钞机等的地点。最终，该团伙被查获近 50 万英镑资产，涉案金额超过 5500 万英镑（约 5.17 亿人民币）。</span></p></li><li><p><strong><span>处理结果</span></strong><span>：其中四人（三男一女）于 2024 年 8 月 26 日被判刑，另外三人已于今年 6 月因类似罪行被判刑。涉案人员的刑期从 11 个月至 12 年不等，所有人的总刑期达到 24 年零 11 个月。</span></p></li></ul></li><li><p><span>北京 “地下钱庄” 案</span></p><ul><li><p><strong><span>案件详情</span></strong><span>：以周某为首的团伙原本做外贸生意，因手中有大量资金流，便与境外人员相互勾结，在境内外各组建起一个资金池，形成 “地下钱庄”。通过 “对敲” 方式为境内、外客户提供非法换汇业务。即境内客户需要兑换外汇时，团伙成员用境内关联账户收取人民币资金，境外资金池则转账对应外币至客户指定境外账户；境外客户换汇人民币到境内同理。</span></p></li><li><p><strong><span>处理结果</span></strong><span>：该团伙涉案金额达 4000 余万元，今年 5 月，北京市公安局经侦总队会同海淀公安分局将该团伙成员全部抓获，6 名犯罪嫌疑人因涉嫌非法经营罪被检察机关批准逮捕。</span></p></li></ul></li><li><p><span>意大利华人 “地下银行” 网络案</span></p><ul><li><p><strong><span>案件详情</span></strong><span>：2023 年 12 月 21 日，意大利布雷西亚税警捣毁一个分部在意大利多地的华人 “地下银行” 网络。该团伙成员分布在意大利不同地区，利用加密的计算机应用程序或私下换汇的方式，向当地华人和意大利犯罪集团的成员提供洗钱、虚假发票等非法金融服务。</span></p></li><li><p><strong><span>处理结果</span></strong><span>：3 名华人因涉嫌洗钱犯罪被逮捕；4 人因涉嫌洗钱、非法赌博被起诉；另有 2 人因非法入境、非法滞留被起诉。警方查扣逾 120 万欧元现金、6 块劳力士手表、数十台计算机设备和手机，及 5 台点钞机。</span></p></li></ul></li><li><p><span>美国纽约私下换汇抢劫案引出的洗钱风险</span></p><ul><li><p><strong><span>案件详情</span></strong><span>：美国纽约皇后区长岛市发生一起因换汇导致的抢劫案。两名华裔男子在网上和他人相约将美金换成人民币，见面时遭另外两名男子袭击并被抢走约 3 万 4000 美元。华人换汇被骗被抢的案件屡屡发生，而私下换汇不仅存在抢劫等安全风险，还可能因涉及非法来源的资金而触犯 “洗钱罪”。虽然此案件主要是抢劫，但侧面反映了私下换汇背后潜在的洗钱风险以及可能违反的法律规定。</span></p></li></ul></li><li><p><span>留学生私下换汇涉诈案</span></p><ul><li><p><strong><span>案件详情</span></strong><span>：2024 年 2 月 15 日，留学生小 p 因急需兑换人民币交学费，通过网络联系到可以帮忙私下换汇的第三方机构的沈某，将本国货币转账给沈某后，沈某向小 p 的银行账户汇入人民币。2 天后，小 p 发现其银行卡被公安机关依法冻结，原来沈某转给小 p 的那笔钱是涉诈资金。</span></p></li></ul></li></ol><h2 id='银行开户'><span>银行开户</span></h2><p><span>每一位留学生应在马来西亚拥有一张及一张以上</span><strong><span>本地银行卡</span></strong><span>，方便</span><strong><span>缴纳学费、房租</span></strong><span>，</span><strong><span>生活支出</span></strong><span>（绑定Touch n Go需要马来西亚本地银行卡），下面介绍银行开户的有关信息。</span></p><h3 id='选择银行'><span>选择银行</span></h3><h4 id='推荐'><span>推荐</span></h4><ul><li><p><strong><span>马来亚银行（Maybank）</span></strong><span>：成立于 1960 年，五年后被政府收购变为国有化，是马来西亚最大的银行，在新加坡和印尼也有广泛分布，网点众多，业务办理相对方便。</span></p></li><li><p><strong><span>中国银行（马来西亚）</span></strong><span>：马来西亚中国银行是中国银行（香港）有限公司（以下简称“中银香港”）的全资子公司 。中银香港是香港主要商业银行集团及三家发钞银行之一，亦为香港人民币业务的唯一清算行，各项主要业务位居市场前列，并在跨境业务和人民币业务享有领先优势。中国银行持续经营一百多年，是中国国际化和多元程度最高的银行。为贯彻中国银行集团的海外发展策略，中银香港积极推进区域化发展，致力建设成为一流的全功能国际化区域性银行。</span></p></li></ul><h4 id='其他'><span>其他</span></h4><ul><li><p><strong><span>联昌国际银行（CIMB Bank）</span></strong><span>：严格意义上属于联合银行，由九所银行合并而来。其业务范围广泛，提供多种金融服务。</span></p></li><li><p><strong><span>大众银行（Public Bank）</span></strong><span>：成立于 1966 年的私人银行，投资了大马众多的公共建设项目，资金稳定性有保证，对学生有不少福利和优惠。</span></p></li><li><p><strong><span>兴业银行（RHB Bank）</span></strong><span>：成立于 1994 年，由 dcbbank 和 kwongyikbank 合并而成，是很多学校的学费卡合作银行，新生开卡可能有福利。</span><strong><span>马来西亚公立大学</span></strong><span>的同学在领取</span><strong><span>iKad</span></strong><span>时会得到一张</span><strong><span>印有校徽</span></strong><span>的RHB Bank卡，其他学校同学暂时没有。</span></p></li><li><p><strong><span>丰隆银行（Hong Leong Bank）</span></strong><span>：马来西亚的跨国银行，也是马来西亚五大银行之一，在大马拥有较多分行。</span></p></li></ul><h3 id='准备材料'><span>准备材料</span></h3><h4 id='主要材料'><span>主要材料</span></h4><figure class='table-figure'><table><thead><tr><th><span>所需材料</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>有效护照</span><strong><span>原件</span></strong></td><td><span>证明个人身份的重要文件，护照需在有效期内</span></td></tr><tr><td><span>有效学生签证</span><strong><span>原件*</span></strong><span>*（没有签证无法办理）**</span></td><td><span>确保在马来西亚的合法留学身份，签证有效期最好大于半年</span></td></tr><tr><td><span>学生卡</span><strong><span>原件</span></strong></td><td><span>学校发放的学生身份证明</span></td></tr><tr><td><span>学校录取通知书（offer）</span></td><td><span>用于证明是该校的学生</span></td></tr><tr><td><span>马来西亚移民局准入信复印件</span></td><td><span>用于证明是该校的学生</span></td></tr><tr><td><span>学院确认信</span></td><td><span>学校或学院开具的确认学生身份和入学信息的信件</span></td></tr><tr><td><span>初始存款</span></td><td><span>通常需要准备 200 至 300 马币的初始存款</span></td></tr><tr><td><span>租房合同</span></td><td><span>校外租房请找中介或房东，校内公寓请询问相关主管部门</span></td></tr></tbody></table></figure><p><span>留学生在马银行开户所需材料可能随时发生变动，具体请以各大银行官网为准，推荐在办理之前询问银行相关工作人员或直接拨打各大银行办理热线（中国银行、中国工商银行、中国建设银行可选择普通话服务）。</span></p><h4 id='中国银行马来西亚'><span>中国银行（马来西亚）</span></h4><p><span>以下是中国银行（马来西亚）留学生开户所需材料</span></p><figure class='table-figure'><table><thead><tr><th><span>所需材料</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>有效护照原件</span></td><td><span>证明个人身份的重要文件，护照需在有效期内，必须携带</span></td></tr><tr><td><span>有效居民身份证</span></td><td><span>必须证明个人身份的重要文件，身份证需在有效期内，必须携带</span></td></tr><tr><td><span>有效学生签证</span><strong><span>（没有签证无法办理）</span></strong></td><td><span>确保在马来西亚的合法留学身份，签证有效期必须大于半年</span></td></tr><tr><td><span>学校确认信（Confirmation Letter)</span></td><td><span>用于证明是该校的学生</span></td></tr><tr><td><span>学校录取通知书（offer）</span></td><td><span>用于证明是该校的学生</span></td></tr><tr><td><span>租房合同（Tenancy Letter）</span></td><td><span>校外租房请找中介或房东，校内公寓请询问相关主管部门</span></td></tr></tbody></table></figure><blockquote><p><strong><span>中国银行（马来西亚）吉隆坡总部</span></strong></p><ul><li><p><span>地址: Ground Floor, Plaza OSK, 25 Jalan Ampang, 50450 Kuala Lumpur.</span></p></li><li><p><span>电话: 603-2387 8800</span></p></li></ul><p><strong><span>中国银行（马来西亚）蒲种分行</span></strong></p><ul><li><p><span>地址: Ground &amp; 1st Floor, Lot G-6 &amp; 1-6, Tower 2, PFCC, Jalan Puteri ½, Bandar Puteri, 47100 Puchong Selangor Darul Ehsan.</span></p></li><li><p><span>电话: 603-8063 8898  传真: 603-8063 5214</span></p></li></ul></blockquote><p>&nbsp;</p><p>&nbsp;</p><ol start='' ><li><p><span>办理流程</span></p><ol start='' ><li><p><strong><span>前往银行柜台</span></strong><span>：在工作日前往选定的银行分支机构，建议选择学校附近或离家近的银行，方便后续业务办理。</span></p></li><li><p><strong><span>填写申请表</span></strong><span>：按照工作人员的指示填写个人相关信息的申请表，务必仔细填写，确保信息准确无误。</span></p></li><li><p><strong><span>提交材料审核</span></strong><span>：将准备好的材料递交给银行工作人员进行审核，审核过程可能需要一定时间。</span></p></li><li><p><strong><span>确认信息与发卡</span></strong><span>：信息审核通过后，银行会确认相关信息并发放银行卡。</span></p></li><li><p><strong><span>激活与更新信息</span></strong><span>：拿到银行卡后，需要进行激活，并更新电话等个人信息，以便银行能够及时与您联系。</span></p></li></ol></li><li><p><span>注意事项</span></p><ul><li><p><strong><span>银行营业时间</span></strong><span>：马来西亚的银行周六日是假日，周五下午为穆斯林的祷告活动，银行一般 4 点下班，所以办理业务需选择工作日，并避开 10 点左右的高峰期以及快下班的时间。</span></p></li><li><p><strong><span>学院核实</span></strong><span>：有些银行会给学院打电话核实学生信息，去之前最好核实学院的上班时间，确保信息核实能够顺利进行。</span></p></li><li><p><strong><span>多开账户</span></strong><span>：为了财务安全，建议办理两个不同银行的卡，分散资金风险。</span></p></li><li><p><strong><span>安全用卡</span></strong><span>：不要晚上取钱，注意个人财物安全。同时，了解银行卡的年费、在其他银行取钱或发生交易行为的手续费、是否有最低存储额度等费用相关信息。</span></p></li></ul></li></ol><p>&nbsp;</p><h2 id='保险购买'><span>保险购买</span></h2><p><span>强调购买医疗保险的重要性，并提供相关保险选择建议。</span></p><h2 id='入境与抵达'><span>入境与抵达</span></h2><ul><li><p><span>入境流程：详细说明马来西亚的入境流程，包括填写入境卡、海关检查等。</span></p></li><li><p><span>接机与交通：提供从机场到目的地城市的交通方式选择，如出租车、机场巴士、轻轨等。</span></p></li><li><p><span>临时住宿：为初来乍到的学生提供临时住宿建议，如酒店、青年旅社等。</span></p></li></ul><h2 id='安顿与适应'><span>安顿与适应</span></h2><ul><li><p><span>长期住宿：介绍马来西亚的各种长期住宿选择，如学生宿舍、校外公寓、合租房等。</span></p></li><li><p><span>注册与报到：指导学生完成学校注册、选课等报到手续。</span></p></li><li><p><span>当地交通：介绍马来西亚的公共交通系统，如巴士、轻轨、出租车等，以及如何办理学生优惠卡。</span></p></li><li><p><span>电话卡与网络：提供当地电话卡购买与网络套餐选择建议。</span></p></li><li><p><span>日常生活：分享有关马来西亚的购物、餐饮、娱乐等日常生活信息。</span></p></li><li><p><span>文化适应：介绍马来西亚的文化习俗、宗教信仰等，帮助学生更好地融入当地社会。</span></p></li></ul><p><strong><span>4. 学习与生活</span></strong></p><ul><li><p><span>学习资源：提供有关图书馆、学习小组、学术辅导等学习资源的信息。</span></p></li><li><p><span>校园生活：介绍马来西亚大学的校园设施、社团活动、学生服务等。</span></p></li><li><p><span>打工兼职：说明马来西亚的打工政策，并提供兼职机会信息。</span></p></li><li><p><span>安全与健康：提醒学生注意安全事项，并提供当地医疗机构信息。</span></p></li><li><p><span>旅行与探索：推荐马来西亚值得游览的景点，鼓励学生利用假期探索这个美丽的国家。</span></p></li></ul><p><strong><span>5. 重要信息与联系方式</span></strong></p><ul><li><p><span>紧急联系电话：列出马来西亚的紧急求助电话，如警察、消防、救护车等。</span></p></li><li><p><span>中国驻马来西亚大使馆联系方式：提供大使馆的地址、电话、网址等信息，以便学生在需要时寻求帮助。</span></p></li><li><p><span>其他实用信息：补充其他可能对学生有用的信息，如当地法律法规、文化禁忌等。</span></p></li></ul><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div></div>
+</body>
+</html>
